@@ -1,0 +1,3 @@
+[submodule "qia-atomic"]
+	path = qia_atomic
+	url = git@github.com:h-oll/qia-atomic.git
