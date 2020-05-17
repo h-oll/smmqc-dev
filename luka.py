@@ -57,10 +57,6 @@ def luka_prep(client_preps):
 
 if __name__ == "__main__": 
     
-    client_num = 10 
-    client_bits = [random.randrange(2) for i in range(client_num)]
-    client_bases = [1 + random.randrange(2) for i in range(client_num)]
-
     with CQCConnection("Alice") as Alice: 
         _ = qpzlib(mapping, Alice)
 
@@ -69,9 +65,9 @@ if __name__ == "__main__":
             st.lists(
                 st.tuples(
                     st.integers(min_value=0, max_value=1),
-                    st.integers(min_value=1, max_value=3)),
+                    st.integers(min_value=1, max_value=2)),
                 min_size=1,
-                max_size=20))
+                max_size=10))
         def test_luka_prep(client_preps): luka_prep(client_preps)
 
         test_luka_prep()
